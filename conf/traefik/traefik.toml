@@ -27,5 +27,5 @@ entrypoint="http"
 
 [[acme.domains]]
    main = "schererstefan.xyz"
-   sans = ["whoami.schererstefan.xyz", "portainer.schererstefan.xyz", "jenkins.schererstefan.xyz" ]
+   sans = ["whoami.schererstefan.xyz", "portainer.schererstefan.xyz", "jenkins.schererstefan.xyz", "grafana.schererstefan.xyz" ]
 

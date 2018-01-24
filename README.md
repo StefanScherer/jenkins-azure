@@ -13,8 +13,6 @@ Jenkins in Azure [https://jenkins.schererstefan.xyz](https://jenkins.schererstef
 ## GitHub WebHook
 - Set Up a Blue Ocean Pipeline with Github
   - https://serversforhackers.com/c/set-up-a-blue-ocean-pipeline-with-github
-- Triggering a Jenkins build from a push to Github
-  - https://medium.com/@marc_best/trigger-a-jenkins-build-from-a-github-push-b922468ef1ae
 
 ## Azure VM agents
 - Scale your Jenkins deployments to meet demand with Azure VM agents

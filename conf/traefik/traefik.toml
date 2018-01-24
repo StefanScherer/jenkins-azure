@@ -1,0 +1,42 @@
+logLevel = "DEBUG"
+defaultEntryPoints = ["http", "https"]
+
+[web]
+address = ":8081"
+
+[docker]
+domain = "schererstefan.xyz"
+watch = true
+
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+[acme]
+email = "scherer_stefan@icloud.com"
+storage = "/storage/acme.json"
+entryPoint = "https"
+caServer = "https://acme-staging.api.letsencrypt.org/directory"
+
+[acme.httpchallenge]
+entrypoint="http"
+
+[[acme.domains]]
+   main = "schererstefan.xyz"
+   sans = ["whoami.schererstefan.xyz", "portainer.schererstefan.xyz", "jenkins.schererstefan.xyz" ]
+
+#[backends]
+#  [backends.backend]
+#    [backends.backend.servers.server1]
+#    url = "http://127.0.0.1:8080"
+#
+#[frontends]
+#  [frontends.frontend]
+#  backend = "backend"
+#    [frontends.frontend.routes.test]
+#    rule = "Host:jenkins.schererstefan.xyz"
+#

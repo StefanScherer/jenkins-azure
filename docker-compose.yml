@@ -1,0 +1,37 @@
+version: '2.1'
+services:
+  traefik:
+    image: traefik:v1.5.0
+    ports:
+      - "80:80"
+      - "8081:8081"
+      - "443:443"
+    volumes:
+      - ./conf/traefik:/etc/traefik
+      - ./data/traefik:/storage
+      - /var/run/docker.sock:/var/run/docker.sock
+
+#  whoami1:
+#    image: stefanscherer/whoami-windows
+#    labels:
+#      - "traefik.backend=whoami"
+#      - "traefik.frontend.entryPoints=https"
+#      - "traefik.frontend.rule=Host:whoami.schererstefan.xyz"
+
+  portainer:
+    image: portainer/portainer:1.16.1
+    labels:
+      - "traefik.backend=portainer"
+      - "traefik.frontend.rule=Host:portainer.schererstefan.xyz"
+    volumes:
+      - ./data/portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  jenkins:
+    image: jenkinsci/jenkins:lts
+    labels:
+      - "traefik.port=8080"
+      - "traefik.backend=jenkins"
+      - "traefik.frontend.rule=Host:jenkins.schererstefan.xyz"
+    volumes:
+      - ./data/jenkins:/var/jenkins_home

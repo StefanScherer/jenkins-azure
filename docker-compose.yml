@@ -11,13 +11,6 @@ services:
       - ./data/traefik:/storage
       - /var/run/docker.sock:/var/run/docker.sock
 
-#  whoami1:
-#    image: stefanscherer/whoami-windows
-#    labels:
-#      - "traefik.backend=whoami"
-#      - "traefik.frontend.entryPoints=https"
-#      - "traefik.frontend.rule=Host:whoami.schererstefan.xyz"
-
   portainer:
     image: portainer/portainer:1.16.1
     labels:

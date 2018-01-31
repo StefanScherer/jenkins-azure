@@ -5,7 +5,7 @@ defaultEntryPoints = ["http", "https"]
 address = ":8081"
 
 [docker]
-domain = "schererstefan.xyz"
+domain = "packerbuilder.xyz"
 watch = true
 
 
@@ -26,6 +26,6 @@ entryPoint = "https"
 entrypoint="http"
 
 [[acme.domains]]
-   main = "schererstefan.xyz"
-   sans = ["whoami.schererstefan.xyz", "portainer.schererstefan.xyz", "jenkins.schererstefan.xyz", "grafana.schererstefan.xyz" ]
+   main = "packerbuilder.xyz"
+   sans = ["whoami.packerbuilder.xyz", "portainer.packerbuilder.xyz", "jenkins.packerbuilder.xyz", "grafana.packerbuilder.xyz" ]
 
